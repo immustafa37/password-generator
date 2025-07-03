@@ -35,7 +35,12 @@ const PasswordGenerator = () => {
   return (
     <div className="generator">
       <div className="output">
-        <input type="text" value={password} readOnly />
+        <input
+          type="text"
+          value={password}
+          readOnly
+          aria-label="Generated password"
+        />
         <button onClick={copyToClipboard}>Copy</button>
       </div>
 
@@ -51,8 +56,9 @@ const PasswordGenerator = () => {
           />
         </label>
 
-        <label>
+        <label htmlFor="uppercase">
           <input
+            id="uppercase"
             type="checkbox"
             checked={includeUppercase}
             onChange={() => setIncludeUppercase(!includeUppercase)}
@@ -60,8 +66,9 @@ const PasswordGenerator = () => {
           Include Uppercase
         </label>
 
-        <label>
+        <label htmlFor="numbers">
           <input
+            id="numbers"
             type="checkbox"
             checked={includeNumbers}
             onChange={() => setIncludeNumbers(!includeNumbers)}
@@ -69,8 +76,9 @@ const PasswordGenerator = () => {
           Include Numbers
         </label>
 
-        <label>
+        <label htmlFor="symbols">
           <input
+            id="symbols"
             type="checkbox"
             checked={includeSymbols}
             onChange={() => setIncludeSymbols(!includeSymbols)}
